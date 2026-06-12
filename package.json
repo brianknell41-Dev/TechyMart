@@ -1,0 +1,18 @@
+{
+  "name": "techymart",
+  "version": "1.0.0",
+  "private": true,
+  "workspaces": [
+    "apps/*",
+    "packages/*"
+  ],
+  "scripts": {
+    "dev": "concurrently \"npm run dev -w @techymart/web\" \"npm run dev -w @techymart/api\"",
+    "build": "npm run build -w @techymart/web && npm run build -w @techymart/api",
+    "start": "concurrently \"npm run start -w @techymart/web\" \"npm run start -w @techymart/api\"",
+    "seed": "npm run seed -w @techymart/api"
+  },
+  "devDependencies": {
+    "concurrently": "^9.1.2"
+  }
+}
