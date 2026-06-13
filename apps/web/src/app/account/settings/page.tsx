@@ -17,7 +17,7 @@ export default function SettingsPage() {
     setLoading(true);
     try {
       const res = await api.updateProfile(form, token);
-      updateUser(res.user as Partial<typeof user>);
+      if (res.user) updateUser(res.user);
       setSaved(true);
       setTimeout(() => setSaved(false), 3000);
     } catch {
