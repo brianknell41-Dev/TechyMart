@@ -33,8 +33,7 @@ function formatProduct(product: Record<string, unknown>) {
 
 router.get('/', validateQuery(listQuerySchema), async (req, res: Response) => {
   const { page, limit, category, search, minPrice, maxPrice, minRating, sort, featured, flashDeal, inStock } =
-    req.query as z.infer<typeof listQuerySchema>;
-
+    req.query as unknown as z.infer<typeof listQuerySchema>;
   const filter: Record<string, unknown> = { active: true };
 
   if (category) {

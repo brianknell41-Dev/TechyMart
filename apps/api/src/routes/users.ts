@@ -58,7 +58,7 @@ router.delete('/addresses/:id', authenticate, async (req: AuthRequest, res: Resp
     return;
   }
 
-  user.addresses = user.addresses.filter((a) => a._id?.toString() !== req.params.id);
+  user.addresses = user.addresses.filter((a) => (a as any)._id?.toString() !== req.params.id);
   await user.save();
   res.json({ addresses: user.addresses });
 });

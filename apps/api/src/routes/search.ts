@@ -14,7 +14,7 @@ const searchSchema = z.object({
 });
 
 router.get('/', searchLimiter, validateQuery(searchSchema), async (req, res: Response) => {
-  const { q, limit } = req.query as z.infer<typeof searchSchema>;
+  const { q, limit } = req.query as unknown as z.infer<typeof searchSchema>;
 
   const [products, categories] = await Promise.all([
     Product.find({ active: true, $text: { $search: q } })
