@@ -7,7 +7,7 @@ import { CountdownTimer } from '@/components/ui/CountdownTimer';
 import { ArrowRight } from 'lucide-react';
 import type { Product, Category } from '@/types';
 
-const API_URL = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:5000';
+const API_URL = process.env.NEXT_PUBLIC_API_URL || 'https://techymart.onrender.com';
 
 async function fetchData<T>(endpoint: string): Promise<T | null> {
   try {
