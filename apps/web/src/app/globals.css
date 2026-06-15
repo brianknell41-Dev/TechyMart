@@ -30,7 +30,7 @@
   }
 
   .btn-secondary {
-    @apply inline-flex items-center justify-center gap-2 rounded-xl border-2 border-brand-600 bg-white px-6 py-3 text-sm font-semibold text-brand-600 transition-all duration-200 hover:bg-brand-50 active:scale-[0.98];
+    @apply inline-flex items-center justify-center gap-2 rounded-xl border-2 border-brand-600 bg-transparent px-6 py-3 text-sm font-semibold text-brand-600 transition-all duration-200 hover:bg-brand-50 active:scale-[0.98];
   }
 
   .btn-ghost {
